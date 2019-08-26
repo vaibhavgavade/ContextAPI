@@ -1,16 +1,16 @@
 import React,{Component} from 'react';
 import { View, Text,Button,StyleSheet} from 'react-native';
-import Cartcontext from '../Src/context/mycontext'
+import MyConsumer from '../Src/OnsumerComponent';
+
 
 export default class firstScreen extends Component {
     render() {
     return (
-    
-<Cartcontext.Consumer>
-    {item=>(<Text>{item.state.value}</Text>)}
-    
-</Cartcontext.Consumer>
-     
+    <View>
+             <MyConsumer/>
+             <MyConsumer/>
+    </View>
+       
     
     );
   }

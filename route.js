@@ -1,6 +1,8 @@
-import {createStackNavigator,createAppContainer} from 'react-navigation';
+import {createStackNavigator,createAppContainer,createDrawerNavigator} from 'react-navigation';
 import firstScreen from './Src/firstScreen';
 import secondScreen from './Src/secondScreen';
+import Drawer from './components/Drawer'
+
 const AppStack = createStackNavigator({
     one:{
         screen:firstScreen,
@@ -12,5 +14,18 @@ const AppStack = createStackNavigator({
     }
 })
 
-const MyStack = createAppContainer(AppStack)
-export default MyStack
+
+
+const drawer=createDrawerNavigator({
+home:{
+    screen:AppStack
+},
+
+},
+{
+    contentComponent:Drawer
+}
+)
+
+const MyStack = createAppContainer(drawer)
+export default MyStack;
